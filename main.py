@@ -1,6 +1,6 @@
 class Person:
-    def __init__(self):
-        self.name = "Evgen"
+    def __init__(self, name):
+        self.name = name
         self.age = 20
         self.height = 180
         self.__weight = 70
@@ -13,9 +13,9 @@ class Person:
 
 
 class Student(Person):
-    def __init__(self):
-        super().__init__()
-        self.name = "Maks"
+    def __init__(self, name):
+        super().__init__(name)
+        self.name = name
         self.progress = 10
 
     def info(self):
@@ -23,14 +23,14 @@ class Student(Person):
         print(f"Name: {self.name}, Progress: {self.height}")
 
 class Teacher(Person):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, name):
+        super().__init__(name)
         self.age = 35
     
 
 
-s = Student()
-t = Teacher()
+s = Student("Ivan")
+t = Teacher("Maks")
 
 s.info()
 t.info()
