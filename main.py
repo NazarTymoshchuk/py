@@ -1,14 +1,53 @@
-class Student:
+class Person:
     def __init__(self):
-        self.name = "Vlad"
-        self.age = 18
+        self.name = "Evgen"
+        self.age = 20
+        self.height = 180
+        self.__weight = 70
 
-    def Hello(self):
-        print("Hello World")
+    def info(self):
+        print(f"Name: {self.name}, Age: {self.age}, Height: {self.height}, Weight: {self.__weight}")
+
+    def __inform(self):
+        pass
+
+
+class Student(Person):
+    def __init__(self):
+        super().__init__()
+        self.name = "Maks"
+        self.progress = 10
+
+    def info(self):
+        super().info()
+        print(f"Name: {self.name}, Progress: {self.height}")
+
+class Teacher(Person):
+    def __init__(self):
+        super().__init__()
+        self.age = 35
+    
+
 
 s = Student()
+t = Teacher()
 
-s.Hello()
+s.info()
+t.info()
 
-print(s.name)
-print(s.age)
+
+
+class Grandparent:
+    def info(self):
+        print("i'm grandparent")
+
+class Parent(Grandparent):
+    def info(self):
+        print("i'm parent")
+
+class Child(Parent):
+    def __init__(self):
+        super().info()
+
+
+
