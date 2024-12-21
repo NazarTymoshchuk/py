@@ -32,8 +32,8 @@ class Teacher(Person):
 s = Student("Ivan")
 t = Teacher("Maks")
 
-s.info()
-t.info()
+#s.info()
+#t.info()
 
 
 
@@ -51,3 +51,37 @@ class Child(Parent):
 
 
 
+
+class Person:
+
+    def __init__(self, name : str, age : int):
+        self.name = name
+        self.age = age
+        self.height = 170
+
+    def info(self):
+        pass
+
+class Teacher(Person):
+    def __init__(self, name, age, salary):
+        super().__init__(name, age)
+        self.salary = salary
+
+    
+
+class Student(Person):
+    def __init__(self, name, age, progress):
+        super().__init__(name, age)
+        self.progress = progress
+
+
+student = Student("Nikita", 18, 12)
+teacher = Teacher("Nazar", 55, 40000)
+
+print(student.name)
+print(student.age)
+print(student.progress)
+
+print(teacher.name)
+print(teacher.age)
+print(teacher.salary)
