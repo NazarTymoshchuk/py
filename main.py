@@ -62,7 +62,10 @@ class Person:
     def info(self):
         pass
 
-class Teacher(Person):
+class Person1:
+    weight = 0
+
+class Teacher(Person, Person1):
     def __init__(self, name, age, salary):
         super().__init__(name, age)
         self.salary = salary
@@ -85,3 +88,4 @@ print(student.progress)
 print(teacher.name)
 print(teacher.age)
 print(teacher.salary)
+print(teacher.weight)
